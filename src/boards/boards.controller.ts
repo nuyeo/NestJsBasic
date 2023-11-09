@@ -1,5 +1,5 @@
 // eslint-disable-next-line prettier/prettier
-import { Controller, Get, Post, Body, Param, Delete, Patch } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Patch, UsePipes, ValidationPipe } from '@nestjs/common';
 import { BoardsService } from './boards.service';
 import { Board, BoardStatus } from './board.model';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -15,6 +15,7 @@ export class BoardsController {
   }
 
   @Post('/')
+  @UsePipes(ValidationPipe)
   createBoard(@Body() createBoardDto: createBoardDto): Board {
     return this.boardsService.createBoard(createBoardDto);
   }
