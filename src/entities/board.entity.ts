@@ -6,17 +6,24 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { UserEntity } from './user.entity';
+import { BoardStatus } from 'src/types/enums/board-status.enum';
 
 @Entity({ name: 'board' })
 export class BoardEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
+  @Column({ nullable: true })
   userId!: number;
 
   @Column()
   title!: string;
+
+  @Column()
+  description!: string;
+
+  @Column()
+  status!: BoardStatus;
 
   /**
    * relations

@@ -3,7 +3,10 @@ import {
   Controller,
   Param,
   Get,
-  // Post,
+  UsePipes,
+  ValidationPipe,
+  Post,
+  Body,
   // Body,
   // Delete,
   // Patch,
@@ -11,7 +14,8 @@ import {
   // ValidationPipe,
 } from '@nestjs/common';
 import { BoardsService } from '../services/boards.service';
-import { Board } from 'src/modules/board.entity';
+import { CreateBoardDto } from 'src/entities/dto/create-board.dto';
+import { BoardEntity } from 'src/entities/board.entity';
 // import { BoardStatus } from './board-status.enum';
 // // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { createBoardDto } from './dto/create-board.dto';
@@ -30,8 +34,14 @@ export default class BoardsController {
   //   return this.boardsService.createBoard(createBoardDto);
   // }
 
+  @Post()
+  @UsePipes(ValidationPipe)
+  createBoard(@Body() createBoardDto: CreateBoardDto): Promise<BoardEntity> {
+    return this.boardsService.createBoard(createBoardDto);
+  }
+
   @Get('/:id')
-  getBoardById(@Param('id') id: number): Promise<Board> {
+  getBoardById(@Param('id') id: number): Promise<BoardEntity> {
     return this.boardsService.getBoardById(id);
   }
 
