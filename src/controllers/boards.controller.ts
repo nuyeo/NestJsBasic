@@ -1,24 +1,25 @@
 // eslint-disable-next-line prettier/prettier
 import {
   Controller,
-  // Get,
+  Param,
+  Get,
   // Post,
   // Body,
-  // Param,
   // Delete,
   // Patch,
   // UsePipes,
   // ValidationPipe,
 } from '@nestjs/common';
-// import { BoardsService } from './boards.service';
+import { BoardsService } from '../services/boards.service';
+import { Board } from 'src/modules/board.entity';
 // import { BoardStatus } from './board-status.enum';
 // // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { createBoardDto } from './dto/create-board.dto';
 // import { BoardStatusValidationPipe } from './pipes/board-status-validation.pipe';
 
 @Controller('boards')
-export class BoardsController {
-  // constructor(private boardsService: BoardsService) {}
+export default class BoardsController {
+  constructor(private boardsService: BoardsService) {}
   // @Get('/')
   // getAllBoard(): Board[] {
   //   return this.boardsService.getAllBoards();
@@ -28,10 +29,17 @@ export class BoardsController {
   // createBoard(@Body() createBoardDto: createBoardDto): Board {
   //   return this.boardsService.createBoard(createBoardDto);
   // }
+
+  @Get('/:id')
+  getBoardById(@Param('id') id: number): Promise<Board> {
+    return this.boardsService.getBoardById(id);
+  }
+
   // @Get('/:id')
   // getBoardById(@Param('id') id: string): Board {
   //   return this.boardsService.getBoardById(id);
   // }
+
   // @Delete('/:id')
   // deleteBoard(@Param('id') id: string): void {
   //   this.boardsService.deleteBoard(id);
