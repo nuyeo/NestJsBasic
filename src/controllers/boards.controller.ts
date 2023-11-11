@@ -7,8 +7,9 @@ import {
   ValidationPipe,
   Post,
   Body,
+  ParseIntPipe,
   // Body,
-  // Delete,
+  Delete,
   // Patch,
   // UsePipes,
   // ValidationPipe,
@@ -49,6 +50,11 @@ export default class BoardsController {
   // getBoardById(@Param('id') id: string): Board {
   //   return this.boardsService.getBoardById(id);
   // }
+
+  @Delete('/:id')
+  deleteBoard(@Param('id', ParseIntPipe) id): Promise<void> {
+    return this.boardsService.deleteBoard(id);
+  }
 
   // @Delete('/:id')
   // deleteBoard(@Param('id') id: string): void {
