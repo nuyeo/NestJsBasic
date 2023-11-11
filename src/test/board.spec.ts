@@ -1,4 +1,4 @@
-import { AppModule } from 'src/app.module';
+import { AppModule } from 'src/modules/app.module';
 import BoardsController from 'src/controllers/boards.controller';
 import { BoardsService } from 'src/services/boards.service';
 import { Test } from '@nestjs/testing';
