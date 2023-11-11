@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { BoardEntity } from 'src/entities/board.entity';
 import { CreateBoardDto } from 'src/entities/dto/create-board.dto';
 import { BoardRepository } from 'src/repositories/board.repository';
+import { BoardStatus } from 'src/types/enums/board-status.enum';
 // import { BoardStatus } from './board-status.enum';
 // import { v4 as uuid } from 'uuid';
 // import { createBoardDto } from './dto/create-board.dto';
@@ -66,6 +67,18 @@ export class BoardsService {
   //   const found = this.getBoardById(id);
   //   this.boards = this.boards.filter((board) => board.id !== found.id);
   // }
+
+  async updateBoardStatus(
+    id: number,
+    status: BoardStatus,
+  ): Promise<BoardEntity> {
+    const board = await this.getBoardById(id);
+
+    board.status = status;
+    await this.boardRepository.save(board);
+
+    return board;
+  }
   // updateBoardStatus(id: string, status: BoardStatus): BoardEntity {
   //   const board = this.getBoardById(id);
   //   board.status = status;

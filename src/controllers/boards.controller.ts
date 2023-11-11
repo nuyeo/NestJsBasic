@@ -8,15 +8,14 @@ import {
   Post,
   Body,
   ParseIntPipe,
-  // Body,
   Delete,
-  // Patch,
-  // UsePipes,
-  // ValidationPipe,
+  Patch,
 } from '@nestjs/common';
 import { BoardsService } from '../services/boards.service';
 import { CreateBoardDto } from 'src/entities/dto/create-board.dto';
 import { BoardEntity } from 'src/entities/board.entity';
+import { BoardStatusValidationPipe } from 'src/pipes/board-status-validation.pipe';
+import { BoardStatus } from 'src/types/enums/board-status.enum';
 // import { BoardStatus } from './board-status.enum';
 // // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { createBoardDto } from './dto/create-board.dto';
@@ -60,6 +59,15 @@ export default class BoardsController {
   // deleteBoard(@Param('id') id: string): void {
   //   this.boardsService.deleteBoard(id);
   // }
+
+  @Patch('/:id/status')
+  updateBoardStatus(
+    @Param('id', ParseIntPipe) id: number,
+    @Body('status', BoardStatusValidationPipe) status: BoardStatus,
+  ) {
+    return this.boardsService.updateBoardStatus(id, status);
+  }
+
   // @Patch('/:id/status')
   // updateBoardStatus(
   //   @Param('id') id: string,
