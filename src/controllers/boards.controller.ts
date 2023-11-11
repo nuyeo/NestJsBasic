@@ -24,6 +24,12 @@ import { BoardStatus } from 'src/types/enums/board-status.enum';
 @Controller('boards')
 export default class BoardsController {
   constructor(private boardsService: BoardsService) {}
+
+  @Get()
+  getAllBoard(): Promise<BoardEntity[]> {
+    return this.boardsService.getAllBoards();
+  }
+
   // @Get('/')
   // getAllBoard(): Board[] {
   //   return this.boardsService.getAllBoards();
