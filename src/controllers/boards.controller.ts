@@ -47,7 +47,7 @@ export default class BoardsController {
   }
 
   @Get('/:id')
-  getBoardById(@Param('id') id: number): Promise<BoardEntity> {
+  getBoardById(@Param('id', ParseIntPipe) id: number): Promise<BoardEntity> {
     return this.boardsService.getBoardById(id);
   }
 
