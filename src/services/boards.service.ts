@@ -12,7 +12,7 @@ import { BoardStatus } from 'src/types/enums/board-status.enum';
 export class BoardsService {
   constructor(
     @InjectRepository(BoardRepository)
-    private boardRepository: BoardRepository,
+    private readonly boardRepository: BoardRepository,
   ) {}
 
   async getAllBoards(): Promise<BoardEntity[]> {
