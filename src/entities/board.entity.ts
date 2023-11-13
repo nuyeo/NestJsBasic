@@ -25,7 +25,9 @@ export class CommonColumns extends BaseEntity {
 
   @DeleteDateColumn()
   deletedAt!: Date;
+}
 
+export class BoardEntity {
   @Column({ nullable: true })
   userId!: number;
 
@@ -46,3 +48,4 @@ export class CommonColumns extends BaseEntity {
   @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
   user!: UserEntity;
 }
+export { BaseEntity };

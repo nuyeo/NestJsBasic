@@ -1,9 +1,7 @@
-import { IsNotEmpty } from 'class-validator';
+import { PickType } from '@nestjs/mapped-types';
+import { BoardEntity } from '../board.entity';
 
-export class CreateBoardDto {
-  @IsNotEmpty()
-  title!: string;
-
-  @IsNotEmpty()
-  description!: string;
-}
+export class CreateBoardDto extends PickType(BoardEntity, [
+  'title',
+  'description',
+] as const) {}
