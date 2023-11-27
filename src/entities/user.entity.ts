@@ -3,7 +3,7 @@ import { CommonEntity } from './common/common.entity';
 
 @Entity({ name: 'user' })
 export class UserEntity extends CommonEntity {
-  @Column({ type: 'varchar', length: 32})
+  @Column({ type: 'varchar', length: 32 })
   name!: string;
 
   @Column({ type: 'varchar', length: 512 })
@@ -20,17 +20,4 @@ export class UserEntity extends CommonEntity {
 
   @Column({ type: 'varchar', length: 16 })
   phone!: string;
-
-  // @PrimaryGeneratedColumn()
-  // id!: number;
-
-  // @Column()
-  // name!: string;
-
-  // /**
-  //  * relations
-  //  */
-
-  // @OneToMany(() => BoardEntity, (board) => board.userId)
-  // boards!: BoardEntity[];
 }
