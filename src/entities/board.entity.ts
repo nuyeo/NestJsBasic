@@ -44,8 +44,8 @@ export class BoardEntity {
    * relations
    */
 
-  @ManyToOne(() => UserEntity, (user) => user.boards)
-  @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
-  user!: UserEntity;
+  // @ManyToOne(() => UserEntity, (user) => user.boards)
+  // @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
+  // user!: UserEntity;
 }
 export { BaseEntity };
