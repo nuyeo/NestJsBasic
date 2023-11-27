@@ -8,5 +8,8 @@ export class OrderProductBundleEntity extends CommonEntity {
     shippingCalculation!: keyof typeof CalculationType;
 
     @Column({ type: 'int', length: 11 })
-    shippingFeeMin!: string;
+    shippingFeeMin!: number;
+
+    @Column({ type: 'bigint', length: 20 })
+    orderId!: number;
 }
