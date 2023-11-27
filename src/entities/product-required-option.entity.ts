@@ -2,19 +2,19 @@ import { Column, Entity } from "typeorm";
 import { CommonEntity } from "./common/common.entity";
 
 @Entity()
-export class ProductInputOptionEntity extends CommonEntity {
+export class ProductRequiredOptionEntity extends CommonEntity {
     @Column({ type: 'varchar', length: 32 })
     name!: string;
 
-    @Column({ type: 'varchar', length: 128 })
-    value!: string;
+    @Column({ type: 'int', length: 11 })
+    price!: number;
 
-    @Column({ type: 'varchar', length: 256 })
-    description!: string;
+    @Column({ type: 'int', length: 11 })
+    stock!: string;
     
     @Column({ type: 'tinyint', length: 1 })
-    required!: number;
+    status!: number;
     
     @Column({ type: 'bigint', length: 20 })
-    productRequiredOptionId!: number;
+    productId!: number;
 }
