@@ -12,7 +12,7 @@ export class ProductEntity extends CommonEntity {
     @Column({ type: 'varchar', length: 256 })
     description!: string;
     
-    @Column({ type: 'longblob' })
+    @Column({ type: 'varchar', length: 4096 })
     img!: string;
     
     @Column({ type: 'int', length: 11 })
