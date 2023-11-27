@@ -48,4 +48,4 @@ export class BoardEntity {
   // @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
   // user!: UserEntity;
 }
-export { BaseEntity };
+// export { BaseEntity };
