@@ -7,7 +7,7 @@ export class ProductEntity extends CommonEntity {
     name!: string;
 
     @Column({ type: 'int', length: 11 })
-    price!: string;
+    price!: number;
     
     @Column({ type: 'varchar', length: 256 })
     description!: string;
@@ -16,7 +16,7 @@ export class ProductEntity extends CommonEntity {
     img!: string;
     
     @Column({ type: 'int', length: 11 })
-    shippingFee!: string;
+    shippingFee!: number;
 
     @Column({ type: 'bigint', length: 20 })
     categoryId!: number;
