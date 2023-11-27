@@ -7,8 +7,8 @@ export class CartEntity extends CommonEntity {
     count!: number;
 
     @Column({ type: 'bigint', length: 20 })
-    id2!: number;
+    productId!: number;
 
     @Column({ type: 'bigint', length: 20 })
-    id3!: number;
+    userId!: number;
 }

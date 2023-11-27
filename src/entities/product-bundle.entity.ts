@@ -9,4 +9,7 @@ export class ProductBundleEntity extends CommonEntity {
 
     @Column({ type: 'int', length: 11 })
     shippingFeeMin!: string;
+
+    @Column({ type: 'bigint', length: 20 })
+    sellerId!: number;
 }
