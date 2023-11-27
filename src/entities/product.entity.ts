@@ -17,4 +17,13 @@ export class ProductEntity extends CommonEntity {
     
     @Column({ type: 'int', length: 11 })
     shippingFee!: string;
+
+    @Column({ type: 'bigint', length: 20 })
+    categoryId!: number;
+
+    @Column({ type: 'bigint', length: 20 })
+    companyId!: number;
+
+    @Column({ type: 'bigint', length: 20 })
+    bundleId!: number;
 }
