@@ -9,9 +9,6 @@ export class OrderProductOptionEntity extends CommonEntity {
     @Column({ type: 'int', length: 11 })
     price!: number;
 
-    @Column({ type: 'int', length: 10 })
-    count!: number;
-
     @Column({ type: 'int' })
     orderProductId!: number;
 }
