@@ -3,7 +3,7 @@ import { CommonEntity } from './common/common.entity';
 
 @Entity()
 export class OrderProductRequiredOptionEntity extends CommonEntity {
-  @Column({ type: 'varchar', length: 128 })
+  @Column({ type: 'varchar', length: 512 })
   name!: string;
 
   @Column({ type: 'int', length: 11 })
