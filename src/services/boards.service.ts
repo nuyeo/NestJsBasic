@@ -41,7 +41,7 @@ export class BoardsService {
   async getBoardById(id: number): Promise<BoardEntity> {
     const found = await this.boardRepository.findOne({
       where: {
-        id: id,
+        id!: id,
       },
     });
 

@@ -2,14 +2,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToOne,
-  JoinColumn,
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
-import { UserEntity } from './user.entity';
 import { BoardStatus } from 'src/types/enums/board-status.enum';
 
 @Entity({ name: 'board' })

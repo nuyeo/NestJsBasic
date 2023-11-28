@@ -7,14 +7,23 @@ export class ProductEntity extends CommonEntity {
     name!: string;
 
     @Column({ type: 'int', length: 11 })
-    price!: string;
+    price!: number;
     
     @Column({ type: 'varchar', length: 256 })
     description!: string;
     
-    @Column({ type: 'longblob' })
+    @Column({ type: 'varchar', length: 4096 })
     img!: string;
     
     @Column({ type: 'int', length: 11 })
-    shippingFee!: string;
+    shippingFee!: number;
+
+    @Column({ type: 'int' })
+    categoryId!: number;
+
+    @Column({ type: 'int' })
+    companyId!: number;
+
+    @Column({ type: 'int' })
+    bundleId!: number;
 }

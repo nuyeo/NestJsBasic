@@ -3,6 +3,6 @@ import { CommonEntity } from "./common/common.entity";
 
 @Entity()
 export class CompanyEntity extends CommonEntity {
-    @Column({ name: 'name', type: 'varchar', length: 32 })
+    @Column({ name: 'name', type: 'varchar', length: 256 })
     name!: string;
 }
