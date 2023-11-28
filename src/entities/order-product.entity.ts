@@ -7,5 +7,5 @@ export class OrderProductEntity extends CommonEntity {
   cartId!: number;
 
   @Column({ type: 'bigint', length: 20 })
-  orderBundle!: number;
+  orderBundleId!: number;
 }
