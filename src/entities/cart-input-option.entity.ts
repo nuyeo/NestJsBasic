@@ -6,7 +6,7 @@ export class CartInputOptionEntity extends CommonEntity {
   @Column({ type: 'varchar', length: 512 })
   name!: string;
 
-  @Column({ type: 'int', length: 32 })
+  @Column({ type: 'int', length: 10 })
   count!: number;
 
   @Column({ type: 'int' })

@@ -9,7 +9,7 @@ export class OrderProductInputOptionEntity extends CommonEntity {
   @Column({ type: 'varchar', length: 512 })
   value!: string;
 
-  @Column({ type: 'int', length: 11 })
+  @Column({ type: 'int', length: 10 })
   count!: number;
 
   @Column({ type: 'int' })

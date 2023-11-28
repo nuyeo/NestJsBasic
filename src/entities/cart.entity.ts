@@ -3,7 +3,7 @@ import { CommonEntity } from './common/common.entity';
 
 @Entity()
 export class CartEntity extends CommonEntity {
-  @Column({ type: 'int', length: 11 })
+  @Column({ type: 'int', length: 10 })
   count!: number;
 
   @Column({ type: 'int' })
