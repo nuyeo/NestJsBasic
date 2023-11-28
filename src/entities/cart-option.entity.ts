@@ -6,9 +6,9 @@ export class CartOptionEntity extends CommonEntity {
     @Column({ type: 'int', length: 32 })
     count!: string;
 
-    @Column({ type: 'bigint', length: 20 })
+    @Column({ type: 'int' })
     cartId!: number;
 
-    @Column({ type: 'bigint', length: 20 })
+    @Column({ type: 'int' })
     productOptionId!: number;
 }

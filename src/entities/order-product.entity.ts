@@ -3,9 +3,9 @@ import { CommonEntity } from './common/common.entity';
 
 @Entity()
 export class OrderProductEntity extends CommonEntity {
-  @Column({ type: 'bigint', length: 20 })
+  @Column({ type: 'int' })
   cartId!: number;
 
-  @Column({ type: 'bigint', length: 20 })
+  @Column({ type: 'int' })
   orderBundleId!: number;
 }

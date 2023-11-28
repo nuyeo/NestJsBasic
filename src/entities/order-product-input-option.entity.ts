@@ -12,6 +12,6 @@ export class OrderProductInputOptionEntity extends CommonEntity {
   @Column({ type: 'int', length: 11 })
   count!: number;
 
-  @Column({ type: 'bigint', length: 20 })
+  @Column({ type: 'int' })
   orderProductRequiredOptionId!: number;
 }

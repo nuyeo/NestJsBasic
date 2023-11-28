@@ -15,6 +15,6 @@ export class ProductRequiredOptionEntity extends CommonEntity {
     @Column({ type: 'tinyint', length: 1 })
     status!: number;
     
-    @Column({ type: 'bigint', length: 20 })
+    @Column({ type: 'int' })
     productId!: number;
 }

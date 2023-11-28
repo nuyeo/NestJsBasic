@@ -10,6 +10,6 @@ export class OrderProductBundleEntity extends CommonEntity {
     @Column({ type: 'int', length: 11 })
     shippingFeeMin!: number;
 
-    @Column({ type: 'bigint', length: 20 })
+    @Column({ type: 'int' })
     orderId!: number;
 }
