@@ -13,7 +13,7 @@ export class ProductOptionEntity extends CommonEntity {
   stock!: number;
 
   @Column({ type: 'tinyint', length: 1 })
-  status!: string;
+  status!: number;
 
   @Column({ type: 'bigint', length: 20 })
   productId!: number;
