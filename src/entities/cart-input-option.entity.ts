@@ -11,4 +11,10 @@ export class CartInputOptionEntity extends CommonEntity {
 
   @Column({ type: 'int' })
   productInputOptionId!: number;
+
+  @Column({ type: 'varchar', length: 512 })
+  topic!: string;
+
+  @Column({ type: 'varchar', length: 512 })
+  hint!: string;
 }
