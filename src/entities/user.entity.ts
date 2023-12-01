@@ -1,10 +1,11 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, Unique } from 'typeorm';
 import { CommonEntity } from './common/common.entity';
 
 @Entity({ name: 'user' })
+@Unique(['email'])
 export class UserEntity extends CommonEntity {
-  @Column({ type: 'varchar', length: 32 })
-  name!: string;
+  @Column({ type: 'varchar', length: 16 })
+  email!: string;
 
   @Column({ type: 'varchar', length: 512 })
   hashedPassword!: string;
@@ -15,8 +16,8 @@ export class UserEntity extends CommonEntity {
   @Column({ type: 'int' })
   age!: number;
 
-  @Column({ type: 'varchar', length: 16 })
-  email!: string;
+  @Column({ type: 'varchar', length: 32 })
+  name!: string;
 
   @Column({ type: 'varchar', length: 16 })
   phone!: string;
