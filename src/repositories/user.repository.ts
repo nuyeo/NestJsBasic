@@ -6,12 +6,17 @@ import { AuthCredentialsDto } from 'src/auth/dto/auth-credential.dto';
 import { CustomRepository } from 'src/configs/custom-typeorm.decorator';
 import { UserEntity } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
+import * as bcrypt from 'bcryptjs';
 
 @CustomRepository(UserEntity)
 export class UserRepository extends Repository<UserEntity> {
   async createUser(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    const { email, hashedPassword } = authCredentialsDto;
-    const user = this.create({ email, hashedPassword });
+    const { email, password } = authCredentialsDto;
+
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const user = this.create({ email, password: hashedPassword });
 
     try {
       await this.save(user);

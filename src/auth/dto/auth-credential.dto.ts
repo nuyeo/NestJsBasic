@@ -7,5 +7,5 @@ export class AuthCredentialsDto {
   email!: string;
 
   @IsString() // 해시 값이기 때문에 유효성 검사 생략
-  hashedPassword!: string;
+  password!: string;
 }
